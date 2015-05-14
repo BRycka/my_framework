@@ -6,7 +6,7 @@
  * Time: 21.26
  */
 
-define('DB_HOST', 'localhost');
-define('DB_USER', 'root');
-define('DB_PASSWORD', 'root');
-define('DB_NAME', 'ajax');
+define('DB_HOST', 'db_host');
+define('DB_USER', 'db_user');
+define('DB_PASSWORD', 'db_password');
+define('DB_NAME', 'db_name');

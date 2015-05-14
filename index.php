@@ -7,9 +7,7 @@
  */
 
 // @TODO - phpUnit
-// @TODO - core model database connection (query, delete, getById, update, create - methods) - CRUD
-// @TODO - Autocomplete methods
-// @TODO - error handle
+// @TODO - (query, delete, getById, update, create - methods) - CRUD
 define('BASE_PATH', getcwd());
 define('BASE_URL', '/my_framework/app');
 
