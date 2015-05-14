@@ -5,5 +5,5 @@
             echo ', ' . $urlParam;
         }
     ?>
-    <div class="author">Framework created by <?php echo $name . ' ' . $lastName; ?></div>
+    <div class="author">Framework created by - <?php echo $name . ' ' . $lastName; ?></div>
 </div>
