@@ -9,7 +9,7 @@
 class Controller extends Core_Controller {
 
     // method url: domain/Controller/index/name
-    public function indexAction($name = null) {
+    public function indexAction($urlParam = null) {
         $model = $this->model('Model');
         $model->setName('Ričardas');
         $model->setLastName('Baltulis');
@@ -18,7 +18,7 @@ class Controller extends Core_Controller {
             'title' => 'Welcome',
             'name' => $model->getName(),
             'lastName' => $model->getLastName(),
-            'urlParam' => $name,
+            'urlParam' => $urlParam,
         );
         $this->view('welcome', $params);
     }
