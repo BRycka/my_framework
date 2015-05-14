@@ -6,16 +6,14 @@
  * Time: 21.10
  */
 
-// @TODO - css + js įtraukimai
 // @TODO - phpUnit
-// @TODO - modeliai https://www.youtube.com/watch?v=FWLXYPIxbYI
-// @TODO - core model database connection (query, delete, getById, update, create - methods)
-// @TODO - CRUD
+// @TODO - core model database connection (query, delete, getById, update, create - methods) - CRUD
 // @TODO - Autocomplete methods
 // @TODO - error handle
 define('BASE_PATH', getcwd());
 define('BASE_URL', '/my_framework/app');
 
+require_once BASE_PATH . '/Help/config.php';
 require_once BASE_PATH . '/Core/Controller/Core_Controller.php';
 require_once BASE_PATH . '/App/Controller/Controller.php';
 require_once BASE_PATH . '/Core/Model/Core_Model.php';
