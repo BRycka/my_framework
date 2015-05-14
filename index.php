@@ -14,6 +14,7 @@
 // @TODO - Autocomplete methods
 // @TODO - error handle
 define('BASE_PATH', getcwd());
+define('BASE_URL', '/my_framework/app');
 
 require_once BASE_PATH . '/Core/Controller/Core_Controller.php';
 require_once BASE_PATH . '/App/Controller/Controller.php';
