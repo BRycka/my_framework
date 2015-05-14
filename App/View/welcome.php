@@ -1,4 +1,4 @@
-<div class="greetings">
+<div class="content">
     <?php
         echo 'Welcome to My framework';
         if ($urlParam) {
