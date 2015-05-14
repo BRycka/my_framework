@@ -3,4 +3,4 @@
 *.iml
 out
 gen
-Help/*
+Help/config.php
