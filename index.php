@@ -8,6 +8,7 @@
 
 // @TODO - phpUnit
 // @TODO - (query, delete, getById, update, create - methods) - CRUD
+// @TODO - exceptions handle
 define('BASE_PATH', getcwd());
 define('BASE_URL', '/my_framework/app');
 
