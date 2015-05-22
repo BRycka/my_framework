@@ -14,7 +14,6 @@ define('BASE_URL', '/my_framework/app');
 
 require_once BASE_PATH . '/Help/config.php';
 require_once BASE_PATH . '/Core/Controller/Core_Controller.php';
-require_once BASE_PATH . '/App/Controller/Controller.php';
 require_once BASE_PATH . '/Core/Model/Core_Model.php';
 require_once BASE_PATH . '/Core/FrontController.php';
 
