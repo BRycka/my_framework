@@ -22,6 +22,7 @@ abstract class Core_Controller {
         } else {
 //            throw new Exception('Invalid model name');
             die('Invalid model name. #1');
+//            throw new Exception_Parameters('test');
         }
     }
 
