@@ -13,8 +13,7 @@ class FrontController {
     protected $params = array();
 
     public function __construct() {
-        $url = $this->parseUrl();
-		$this->load($url);
+		$this->validateAuth();
     }
 
     protected function parseUrl() {
@@ -44,5 +43,18 @@ class FrontController {
 		}
 
 		call_user_func_array(array($this->controller, $this->method), $this->params);
+	}
+
+	protected function validateAuth() {
+		// @TODO
+
+		if (1==1) { // not logged in
+			header('Location: http://localhost/jv/my_framework/Login');
+		}
+
+		$url = $this->parseUrl();
+		$this->load($url);
+
+		return true;
 	}
 }

@@ -8,7 +8,7 @@
 
 class Controller extends Core_Controller {
 
-    // method url: domain/Controller/index/name
+    // method url: domain/Controller/index/urlParam
     public function indexAction($urlParam = null) {
         $model = $this->model('Model');
         $model->setName('Ričardas');
