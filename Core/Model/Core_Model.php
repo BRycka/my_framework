@@ -151,6 +151,7 @@ abstract class Core_Model {
 
 		foreach ($condarr as $k=>$v)
 			$query .= " AND `".$k."`='".$this->escape($v) . "'";
+
 		return $this->query($query);
 	}
 

@@ -6,10 +6,11 @@
  * Time: 09:59
  */
 
-define('BASE_PATH', '/Applications/MAMP/htdocs/jv/my_framework'); // @TODO
+require_once '../Help/config.php';
 
-require_once BASE_PATH . '/Core/Controller/Core_Controller.php';
-require_once BASE_PATH . '/Core/Model/Core_Model.php';
-require_once BASE_PATH . '/Core/LoginFrontController.php';
+require_once BASE_PATH . CORE_CONTROLLER;
+require_once BASE_PATH . CORE_MODEL;
+require_once BASE_PATH . LOGIN_MODEL;
+require_once BASE_PATH . CORE_LOGIN_FRONT_CONTROLLER;
 
-$test = new LoginFrontController();
+new LoginFrontController();

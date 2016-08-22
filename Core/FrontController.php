@@ -13,7 +13,11 @@ class FrontController {
     protected $params = array();
 
     public function __construct() {
-		$this->validateAuth();
+        if (isset($_POST['logout'])) {
+            $this->logout();
+        }
+
+        $this->validateAuth();
     }
 
     protected function parseUrl() {
@@ -22,7 +26,10 @@ class FrontController {
         }
     }
 
-	protected function load($url) {
+	protected function load($url, $userData) {
+	    session_start();
+        $this->setSessionData($userData);
+
 		if (file_exists(BASE_PATH . '/App/Controller/' . $url[0] . '.php')) {
 			$this->controller = $url[0];
         }
@@ -46,15 +53,34 @@ class FrontController {
 	}
 
 	protected function validateAuth() {
-		// @TODO
+        // @TODO
+        $loginModel = new LoginModel();
 
-		if (1==1) { // not logged in
-			header('Location: http://localhost/jv/my_framework/Login');
+        if (!$userData = $loginModel->validateUserToken()) { // not logged in
+            header('Location: ' . '/Login/');
 		}
 
 		$url = $this->parseUrl();
-		$this->load($url);
+		$this->load($url, $userData);
 
 		return true;
 	}
+
+	protected function logout() {
+        setcookie("sKey", "", time() - 3600);
+        if (session_status() > 1) {
+            unset($_SESSION);
+            session_destroy();
+        }
+        header("Refresh:0");
+    }
+
+    protected function setSessionData($userData) {
+        if (!isset($_SESSION['sKey']) || $_SESSION['sKey'] != $userData['secret_key']) {
+            $_SESSION['username'] = $userData['username'];
+            $_SESSION['email'] = $userData['email'];
+            $_SESSION['sKey'] = $userData['secret_key'];
+            unset($userData);
+        }
+    }
 }

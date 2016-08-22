@@ -9,7 +9,7 @@
 class LoginFrontController {
 
 	protected $controller = 'Login';
-	protected $method = 'loginAction';
+	protected $method = 'loginFormAction';
 	protected $params = array();
 
 	public function __construct() {
@@ -23,35 +23,33 @@ class LoginFrontController {
 	}
 
 	protected function load($url) {
-		file_put_contents('debugUrl.txt', print_r($url, true) . PHP_EOL, FILE_APPEND);
-		if (file_exists(BASE_PATH . '/App/Controller/Login/' . $url[0] . '.php')) {
-			$this->controller = $url[0];
-		}
-		unset($url[0]);
+        if (file_exists(BASE_PATH . '/App/Controller/Login/' . $url[0] . '.php')) {
+            $this->controller = $url[0];
+        }
+        unset($url[0]);
 
-		require_once BASE_PATH . '/App/Controller/Login/' . $this->controller . '.php';
-		$this->controller = new $this->controller;
+        require_once BASE_PATH . '/App/Controller/Login/' . $this->controller . '.php';
+        $this->controller = new $this->controller;
 
-		if (isset($url[1])) {
-			if (method_exists($this->controller, $url[1] . 'Action')) {
-				$this->method = $url[1] . 'Action';
-			}
-			unset($url[1]);
-		}
+        if (isset($url[1])) {
+            if (method_exists($this->controller, $url[1] . 'Action')) {
+                $this->method = $url[1] . 'Action';
+            }
+            unset($url[1]);
+        }
 
-		call_user_func_array(array($this->controller, $this->method), []);
+        call_user_func_array(array($this->controller, $this->method), []);
 	}
 
 	protected function validateAuth() {
-		// @TODO
+        // @TODO
+        $loginModel = new LoginModel();
 
-		if (1==0) { // not logged in
-			header('Location: http://localhost/jv/my_framework/');
-		}
+        if ($userData = $loginModel->validateUserToken()) { // is logged in
+            header('Location: ' . '/');
+        }
 
-		$url = $this->parseUrl();
-		$this->load($url);
-
-		return true;
-	}
+        $url = $this->parseUrl();
+        $this->load($url);
+    }
 }

@@ -10,13 +10,17 @@
 // @TODO - (query, delete, getById, update, create - methods) - CRUD
 // @TODO - exceptions handle
 // @TODO - session & cookies handle
-define('BASE_PATH', getcwd());
-define('BASE_URL', '/my_framework/app');
 
-require_once BASE_PATH . '/Help/config.php';
-require_once BASE_PATH . '/Core/Exceptions/Parameters.php';
-require_once BASE_PATH . '/Core/Controller/Core_Controller.php';
-require_once BASE_PATH . '/Core/Model/Core_Model.php';
-require_once BASE_PATH . '/Core/FrontController.php';
+// stores all config
+require_once getcwd() . '/Help/config.php';
 
-$test = new FrontController();
+// Exceptions
+require_once BASE_PATH . PARAMETERS_EXCEPTION;
+
+// Core
+require_once BASE_PATH . CORE_CONTROLLER;
+require_once BASE_PATH . CORE_MODEL;
+require_once BASE_PATH . LOGIN_MODEL;
+require_once BASE_PATH . CORE_FRONT_CONTROLLER;
+
+new FrontController();
