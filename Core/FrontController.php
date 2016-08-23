@@ -67,7 +67,7 @@ class FrontController {
 	}
 
 	protected function logout() {
-        setcookie("sKey", "", time() - 3600);
+        setcookie("sKey", "", time() - 3600, '/');
         if (session_status() > 1) {
             unset($_SESSION);
             session_destroy();

@@ -25,3 +25,7 @@ define('CORE_LOGIN_FRONT_CONTROLLER', '/Core/LoginFrontController.php');
 
 // Login
 define('LOGIN_MODEL', '/App/Model/Login/Login.php');
+
+// Database
+define('DATABASE_FILES_PATH', BASE_PATH . '/Help/Database');
+

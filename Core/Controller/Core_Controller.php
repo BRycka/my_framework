@@ -35,12 +35,18 @@ abstract class Core_Controller
         }
     }
     public function getPostParams() {
-        return $_POST;
+        $postParams = [];
+
+        foreach ($_POST as $key => $postParam) {
+            $postParams[$key] = htmlspecialchars(trim($postParam));
+        }
+
+        return $postParams;
     }
 
     public function getPostParam($key) {
         if (isset($_POST[$key])) {
-            return $_POST[$key];
+            return htmlspecialchars(trim($_POST[$key]));
         }
 
         return false;
