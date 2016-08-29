@@ -20,6 +20,7 @@ class Controller extends Core_Controller {
             'lastName' => $model->getLastName(),
             'urlParam' => $urlParam,
         );
+	    
         $this->view('welcome', $params);
     }
 }

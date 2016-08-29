@@ -14,6 +14,7 @@ abstract class Core_Controller
         require_once BASE_PATH . '/App/View/Layout/header.php';
         if (isset($_SESSION['sKey'])) {
             require_once BASE_PATH . '/App/View/Layout/logout.php';
+		    require_once BASE_PATH . '/App/View/Layout/menu.php';
         }
         require_once BASE_PATH . '/App/View/' . $view . '.php';
         require_once BASE_PATH . '/App/View/Layout/footer.php';
