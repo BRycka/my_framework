@@ -1,19 +1,27 @@
 <div class="content">
 	<h1>Events</h1>
+	<a href=<?php echo BASE_URL . "/Events/create"?>>New Event</a>
 	<table border="1">
 		<thead>
 		<tr>
-			<th>First</th>
-			<th>Second</th>
-			<th>Third</th>
+			<th>ID</th>
+			<th>Name</th>
+			<th>Lastname</th>
 		</tr>
 		</thead>
 		<tbody>
-		<tr>
-			<td><a href="<?php echo BASE_URL . '/Events/edit/' . $id ?>">Link</a></td>
-			<td>Something</td>
-			<td>Else</td>
-		</tr>
+		<?php
+		foreach ($params['data'] as $data) {
+		?>
+			<tr>
+				<td><a href="<?php echo BASE_URL . '/Events/edit/' . $data['id']; ?>"><?php echo $data['id'] ?></a></td>
+				<td><?php echo $data['name']; ?></td>
+				<td><?php echo $data['lastname']; ?></td>
+			</tr>
+
+		<?php
+		}
+		?>
 		</tbody>
 	</table>
 </div>

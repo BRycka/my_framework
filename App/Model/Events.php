@@ -6,6 +6,9 @@
  * Time: 21.26
  */
 
-class LoginModel extends Core_Model {
-	private $tableName = 'events';
+class EventsModel extends CoreModelCrud {
+	public $tableName = 'events';
+
+	public function validateParams($params, $action) {
+	}
 }

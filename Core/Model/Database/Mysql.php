@@ -6,7 +6,7 @@
  * Time: 21.25
  */
 
-abstract class Core_Model {
+class Mysql {
 
 	protected $dbHost;
 	protected $dbUser;
@@ -70,7 +70,7 @@ abstract class Core_Model {
 		$data = mysqli_fetch_assoc($rEF);
 		return $data;
 	}
-	
+
 	public function queryData($sql, $id=null) {
 		$rEF = mysqli_query($this->db, $sql);
 		if($this->error())
@@ -155,7 +155,7 @@ abstract class Core_Model {
 		return $this->query($query);
 	}
 
-	public function selectArray($table, $arr=array(), $condarr=array(), $orderarr=array(), $limit = "") {
+	public function selectArray($table, $arr=[], $condarr=[], $orderarr=[], $limit = "") {
 		$query = "SELECT ";
 
 		if($arr && is_array($arr) && count($arr) > 0) {

@@ -6,7 +6,7 @@
  * Time: 21.26
  */
 
-class LoginModel extends Core_Model {
+class LoginModel extends CoreModelCrud {
     private $tableName = 'users';
 
     public function validateUser($params) {

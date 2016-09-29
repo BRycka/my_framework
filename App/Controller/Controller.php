@@ -6,7 +6,7 @@
  * Time: 21.26
  */
 
-class Controller extends Core_Controller {
+class Controller extends CoreControllerCrud {
 
     // method url: domain/Controller/index/urlParam
     public function indexAction($urlParam = null) {

@@ -6,7 +6,7 @@
  * Time: 21.26
  */
 
-class Login extends Core_Controller {
+class Login extends CoreControllerCrud {
 
 	// method url: domain/Login.php
 	public function loginAction($params) {

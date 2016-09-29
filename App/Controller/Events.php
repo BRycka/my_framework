@@ -6,12 +6,17 @@
  * Time: 21.26
  */
 
-class Events extends Core_Controller {
+class Events extends CoreControllerCrud {
+	public $modelName = 'events';
+
 	public function indexAction($urlParam = null) {
+		$list = $this->getList();
+
 		$params = array(
 			'title' => 'Events',
 			'id' => 11,
 			'urlParam' => $urlParam,
+			'data' => $list
 		);
 		$this->view('Events/events', $params);
 	}
@@ -25,7 +30,6 @@ class Events extends Core_Controller {
 	}
 
 	public function editAction($urlParam = []) {
-		var_dump($urlParam);
 		$params = array(
 			'title' => 'Edit Event',
 			'urlParam' => $urlParam,

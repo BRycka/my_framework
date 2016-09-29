@@ -18,8 +18,10 @@ define('BASE_URL', $_SERVER['SERVER_NAME']);
 define('PARAMETERS_EXCEPTION', '/Core/Exceptions/Parameters.php');
 
 // Core
-define('CORE_CONTROLLER', '/Core/Controller/Core_Controller.php');
-define('CORE_MODEL', '/Core/Model/Core_Model.php');
+define('CORE_CONTROLLER', '/Core/Controller/CoreController.php');
+define('CORE_CONTROLLER_CRUD', '/Core/Controller/CoreControllerCrud.php');
+define('CORE_MODEL_DATABASE_MYSQL', '/Core/Model/Database/Mysql.php');
+define('CORE_MODEL_CRUD', '/Core/Model/CoreModelCrud.php');
 define('CORE_FRONT_CONTROLLER', '/Core/FrontController.php');
 define('CORE_LOGIN_FRONT_CONTROLLER', '/Core/LoginFrontController.php');
 

@@ -19,7 +19,9 @@ require_once BASE_PATH . PARAMETERS_EXCEPTION;
 
 // Core
 require_once BASE_PATH . CORE_CONTROLLER;
-require_once BASE_PATH . CORE_MODEL;
+require_once BASE_PATH . CORE_CONTROLLER_CRUD;
+require_once BASE_PATH . CORE_MODEL_DATABASE_MYSQL;
+require_once BASE_PATH . CORE_MODEL_CRUD;
 require_once BASE_PATH . LOGIN_MODEL;
 require_once BASE_PATH . CORE_FRONT_CONTROLLER;
 

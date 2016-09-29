@@ -6,7 +6,7 @@
  * Time: 21.26
  */
 
-class ModelModel extends Core_Model {
+class ModelModel extends CoreModelCrud {
 
     private $name;
     private $lastName;
