@@ -33,6 +33,11 @@ class CoreController {
 			//            throw new Exception_Parameters('test');
 		}
 	}
+
+	public function redirectToIndex($controller) {
+		header('Location: ' . 'http://localhost/jv/my_framework/' . $controller);
+	}
+
 	public function getPostParams() {
 		$postParams = [];
 

@@ -11,7 +11,7 @@
 		</thead>
 		<tbody>
 		<?php
-		foreach ($params['data'] as $data) {
+		foreach ($params['data']['list'] as $data) {
 		?>
 			<tr>
 				<td><a href="<?php echo BASE_URL . '/Events/edit/' . $data['id']; ?>"><?php echo $data['id'] ?></a></td>

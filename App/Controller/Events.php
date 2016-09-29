@@ -9,30 +9,47 @@
 class Events extends CoreControllerCrud {
 	public $modelName = 'events';
 
-	public function indexAction($urlParam = null) {
+	public function indexAction() {
 		$list = $this->getList();
 
 		$params = array(
 			'title' => 'Events',
 			'id' => 11,
-			'urlParam' => $urlParam,
 			'data' => $list
 		);
 		$this->view('Events/events', $params);
 	}
 
-	public function createAction($urlParam = null) {
+	public function createAction() {
+		if ($this->getPostParam('createEvent')) {
+			$this->resetPostParam('createEvent');
+			$this->create();
+			$this->redirectToIndex('Events');
+		}
 		$params = array(
-			'title' => 'Create Event',
-			'urlParam' => $urlParam,
+			'title' => 'Create Event'
 		);
 		$this->view('Events/create', $params);
 	}
 
-	public function editAction($urlParam = []) {
+	public function editAction($id = null) {
+		if ($this->getPostParam('deleteEvent')) {
+			$this->resetPostParams();
+			$this->delete($id);
+			$this->redirectToIndex('Events');
+		}
+
+		if ($this->getPostParam('updateEvent')) {
+			$this->resetPostParam('updateEvent');
+			$this->update($id);
+			$this->redirectToIndex('Events');
+		}
+
+		$data = $this->getById($id);
+
 		$params = array(
 			'title' => 'Edit Event',
-			'urlParam' => $urlParam,
+			'data' => $data,
 		);
 		$this->view('Events/edit', $params);
 	}

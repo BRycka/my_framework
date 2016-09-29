@@ -20,20 +20,20 @@ class CoreControllerCrud extends CoreController {
 		return $this->model->create($this->getPostParams());
 	}
 
-	public function getById() {
-		return $this->model->getById($this->getPostParam('id'));
+	public function getById($id) {
+		return $this->model->getById($id);
 	}
 
 	public function getList() {
 		return $this->model->getList();
 	}
 
-	public function update() {
-		return $this->model->update($this->getPostParam('id'), $this->getPostParams());
+	public function update($id) {
+		return $this->model->update($id, $this->getPostParams());
 	}
 
-	public function delete() {
-		return $this->model->delete($this->getPostParam('id'));
+	public function delete($id) {
+		return $this->model->delete($id);
 	}
 
 	public function restore() {
