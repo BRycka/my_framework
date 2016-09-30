@@ -9,16 +9,17 @@
 class Controller extends CoreControllerCrud {
 
     // method url: domain/Controller/index/urlParam
-    public function indexAction($urlParam = null) {
+    public function indexAction() {
         $model = $this->model('Model');
         $model->setName('Ričardas');
         $model->setLastName('Baltulis');
 
         $params = array(
             'title' => 'Welcome',
-            'name' => $model->getName(),
-            'lastName' => $model->getLastName(),
-            'urlParam' => $urlParam,
+            'data' => [
+	            'name' => $model->getName(),
+	            'lastName' => $model->getLastName()
+            ]
         );
 	    
         $this->view('welcome', $params);
