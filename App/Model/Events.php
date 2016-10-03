@@ -11,12 +11,12 @@ class EventsModel extends CoreModelCrud {
 
 	public function validateParams($params, $action) {
 		if ($action == 'create') {
-			if (!isset($params['name']) || !$params['name']) {
-				var_dump('Name is required'); die;
+			if (!isset($params['location']) || !$params['location']) {
+				var_dump('Location is required'); die;
 			}
 
-			if (!isset($params['lastname']) || !$params['lastname']) {
-				var_dump('Lastname is required'); die;
+			if (!isset($params['customer_id']) || !$params['customer_id']) {
+				var_dump('Customer is required'); die;
 			}
 		}
 	}
