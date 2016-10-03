@@ -19,6 +19,7 @@ class CoreController {
 	}
 
 	public function model($model) {
+	    $model = ucfirst($model);
 		if (file_exists(BASE_PATH . '/App/Model/' . $model . '.php')) {
 			require_once BASE_PATH . '/App/Model/' . $model . '.php';
 
@@ -35,7 +36,7 @@ class CoreController {
 	}
 
 	public function redirectToIndex($controller) {
-		header('Location: ' . 'http://localhost/jv/my_framework/' . $controller);
+		header('Location: ' . BASE_URL . '/' . $controller);
 	}
 
 	public function getPostParams() {
