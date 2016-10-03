@@ -57,7 +57,7 @@ class FrontController {
         $loginModel = new LoginModel();
 
         if (!$userData = $loginModel->validateUserToken()) { // not logged in
-            header('Location: ' . '/Login/');
+            header('Location: ' . BASE_URL . '/Login/');
 		}
 
 		$url = $this->parseUrl();

@@ -3,8 +3,7 @@
 <head>
     <title><?php if (isset($title)) { echo $title; } else { echo "Title not set"; } ?></title>
     <meta charset="utf-8"/>
-<!--    <link rel="stylesheet" href=--><?php //echo BASE_PATH . "/Css/Style.css"; ?><!-- type="text/css"/>-->
-    <link rel="stylesheet" href="/Css/Style.css" type="text/css"/>
+    <link rel="stylesheet" href=<?php echo BASE_URL . "/Css/Style.css"; ?> type="text/css"/>
 
     <!-- Begin Cookie Consent plugin by Silktide - http://silktide.com/cookieconsent -->
     <script type="text/javascript">
